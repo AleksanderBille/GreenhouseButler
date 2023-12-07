@@ -10,9 +10,25 @@
 
 
 <body>
-    <h1>GreenhouseButler</h1>
-    <p>Her er sensor data fra GHB for de sidste 7 dage</p>
+
+    <div class= "container">
+        <pre>
     
+  /$$$$$$                                          /$$                                               /$$$$$$$              /$$     /$$                    
+ /$$__  $$                                        | $$                                              | $$__  $$            | $$    | $$                    
+| $$  \__/  /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$$ | $$$$$$$   /$$$$$$  /$$   /$$  /$$$$$$$  /$$$$$$ | $$  \ $$ /$$   /$$ /$$$$$$  | $$  /$$$$$$   /$$$$$$ 
+| $$ /$$$$ /$$__  $$ /$$__  $$ /$$__  $$| $$__  $$| $$__  $$ /$$__  $$| $$  | $$ /$$_____/ /$$__  $$| $$$$$$$ | $$  | $$|_  $$_/  | $$ /$$__  $$ /$$__  $$
+| $$|_  $$| $$  \__/| $$$$$$$$| $$$$$$$$| $$  \ $$| $$  \ $$| $$  \ $$| $$  | $$|  $$$$$$ | $$$$$$$$| $$__  $$| $$  | $$  | $$    | $$| $$$$$$$$| $$  \__/
+| $$  \ $$| $$      | $$_____/| $$_____/| $$  | $$| $$  | $$| $$  | $$| $$  | $$ \____  $$| $$_____/| $$  \ $$| $$  | $$  | $$ /$$| $$| $$_____/| $$      
+|  $$$$$$/| $$      |  $$$$$$$|  $$$$$$$| $$  | $$| $$  | $$|  $$$$$$/|  $$$$$$/ /$$$$$$$/|  $$$$$$$| $$$$$$$/|  $$$$$$/  |  $$$$/| $$|  $$$$$$$| $$      
+ \______/ |__/       \_______/ \_______/|__/  |__/|__/  |__/ \______/  \______/ |_______/  \_______/|_______/  \______/    \___/  |__/ \_______/|__/      
+
+        </pre>
+    </div>
+    
+    <p>Her er sensor data fra GHB for de sidste 7 dage</p>
+
+
     <div class="base-container">
         <!-- tabs to access "home" and "Sensor variables" -->
         <div class="tabs">
@@ -63,22 +79,17 @@
                 <h1> <?php echo ($status[0] ? 'X' : 'O'); ?> </h1>
             </div>
             <div>
-                <p> Jordfugt Sensor </p>
+                <p> Luftfugt </p>
             </div>
         </div>
         
-        
-        
 
-        
-        
-        
         <?php echo '<div class="watchdogBox ' . ($status[1] ? 'inactiveSensor' : 'activeSensor') . '">'; ?>
             <div>
                 <h1> <?php echo ($status[1] ? 'X' : 'O'); ?> </h1>
             </div>
             <div>
-                <p> Luftfugt Sensor </p>
+                <p> Temperatur </p>
             </div>
         </div>
         
@@ -88,7 +99,7 @@
                 <h1> <?php echo ($status[2] ? 'X' : 'O'); ?> </h1>
             </div>
             <div>
-                <p> Temperatur Sensor </p>
+                <p> Jordfugt </p>
             </div>
         </div>
         
@@ -99,7 +110,7 @@
                 
             </div>
             <div>
-                <p> Sollys Sensor </p>
+                <p> Sollys </p>
             </div>
         </div>
       </div>

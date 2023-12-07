@@ -24,6 +24,15 @@ p {
     margin-top: -15px;
 }
 
+.container {
+    text-align: center;
+}
+
+.container pre {
+    display: flex;
+    justify-content: center;
+}
+
 .sensorStatus {
     margin-top: 20px;
     padding-top: 20px;

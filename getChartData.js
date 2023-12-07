@@ -20,13 +20,13 @@ fetch(file).then((file) => file.text()
     else if (i % 7 == 3) { // Get data
       dataArr.push(Number(data[i]));
     }
-    else if (i % 7 == 5){
-      if(data[i] == '1'){           //Check for WatchDog flag
-        colorArr.push(watchdogColor)
-      } else if (data[i-1] == '1') {//Check for Actuator flag
-        colorArr.push(actuatorColor)
+    else if (i % 7 == 4){
+      if(data[i] == '1') {           //Check for WatchDog flag
+        colorArr.push(watchdogColor);
+      } else if (data[i+1] == '1') {//Check for Actuator flag
+        colorArr.push(actuatorColor);
       } else {                      //No flags
-        colorArr.push(noColor)  
+        colorArr.push(noColor);  
       }
     }
   }

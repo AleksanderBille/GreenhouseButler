@@ -14,10 +14,12 @@ from enum import Enum
 Sensor = Enum('Sensor', ['LuftFugt', 'Temp', 'JordFugt', 'Sollys'], start=0)
 
 def readUART():
+    print('test')
     received_data = ser.read()              #read serial port
     sleep(0.03)
     data_left = ser.inWaiting()             #check for remaining byte
     received_data += ser.read(data_left)
+    print("Recieved data ", received_data)
     
     # Generate bitarray and load the first byte into it. We can now manipulate the first byte.
     errAkt = bitarray()
@@ -30,15 +32,16 @@ def readUART():
     
 
 def logSensorStatus(errAkt):
+    sensorStatus = ""
     sensorStatusFile = open('sensorStatus.txt', 'w')
     for i in range(4):
         bitMask = bitarray('00000001') << i
-        sensorStatus = '0 '
         if ba2int(errAkt & bitMask):
-            sensorStatus = '1 '
+            sensorStatus += '1 '
+        else:
+            sensorStatus += '0 ' 
             
-        sensorStatusFile.write(sensorStatus)
-        
+    sensorStatusFile.write(sensorStatus)    
     sensorStatusFile.close()
 
 def logData(errAkt, temp, luft_fugt, jord_fugt, sollys):
@@ -217,10 +220,10 @@ def logDataInFile(fileToWriteTo, data, sensorEnum, AktuatorErrorByte):
                 currentLoggedData.append(emptyEntry)
             
     # Generate a new datapoint that we then add to the currentLoggedData array        
-    newEntry = date + " " + str(data) + " " + str(AktuatorStatus) + str(sensorStatus) + " " + str(timeScore) + "\n"     
+    newEntry = date + " " + str(data) + " " + str(sensorStatus) + " " + str(aktuatorStatus) + " " + str(timeScore) + "\n"     
     currentLoggedData.append(newEntry)       
     log.close()
-    
+     
     # Open in write mode and log the data
     log = open(fileToWriteTo, 'w')
     for line in currentLoggedData: 
