@@ -1,0 +1,123 @@
+:root {
+    --purple: rgb(107, 0, 60);
+    --green: rgb(5, 137, 66);
+    --white: rgb(255,255,255);
+    --lightGray: rgb(240,250,240);
+}
+
+body {  
+    background: var(--lightGray);
+    padding: 16px;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--purple);
+    text-align: center;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--purple);
+    text-align: center;
+    size: 20px;
+    margin-top: -15px;
+}
+
+.sensorStatus {
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    background: rgb(230,240,230);
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.watchdogBox {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    
+}
+
+.activeSensor h1 {
+    color: rgb(0,255,0);
+}
+
+.inactiveSensor h1 {
+    color: rgb(255,0,0);
+}
+  
+canvas {
+    border: 2px solid var(--purple);
+    margin-left: -20px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+  
+.main-container > div {
+      padding: 0px 10px;
+}
+
+.tabs {
+    /*border: 5px solid var(--purple);*/
+    color: var(--purple);
+    height: auto;
+    width: auto;
+    margin-bottom: 25px;
+}
+
+.button {
+    background-color: var(--purple); /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 8px 4px;
+    padding: 6px 8px;
+    cursor: pointer;
+  }
+
+.base-container {
+    display: flex;
+    flex-direction: column;
+}
+  
+.chart-container-1 {
+    height: 300px;
+    flex: 0 0 auto;
+    width: 50%;
+    order: 1;
+}
+  
+.chart-container-2 {
+    height: 300px;
+    flex: 0 0 auto;
+    width: 50%;
+    order: 2;
+}
+  
+.chart-container-3 {
+    height: 300px;
+    flex: 0 0 auto;
+    width: 50%;
+    order: 3;
+}
+
+.chart-container-4 {
+    height: 300px;
+    flex: 0 0 auto;
+    width: 50%;
+    order: 4;
+}
